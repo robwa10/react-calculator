@@ -1,46 +1,109 @@
 # API Endpoints  
-Information regarding all available endpoints can be found below. For more detailed explanations regarding functionality and logic please see appropriate documentation.   
+Basic information needed for accessing all available endpoints can be found below. For more detailed explanations regarding functionality and logic please see appropriate documentation.   
 
+## Action Creators
+### `inputString(data)`  
+Dispatches an action to add data to a string.  
 
+#### Import  
+`import inputString from '../actions'`  
 
-## Calculation  
+#### Arguments  
+data (string): An operator or number represented as a string to be concated to the current Input String.  
 
-### Calculate  
+#### Returns  
+(object): { type: INPUT_STRING, data }
+___
 
-Calculations are made using the exported `calculate` function.  
+### `calculateResult(data)`
+Dispatches an action to calculate the final result.  
 
+#### Import  
+`import calculateResult from '../actions'`  
+
+#### Arguments  
+data (string): The final state of inputString before dispatching calculation action.  
+
+#### Returns  
+(object): { type: CALCULATE_RESULT, data }
+___
+
+## Maths
+
+### `calculate(array)`  
+
+Calculates a result from an array of string representations of numbers and operators.
+
+#### Import
 `import calculate from '../helpers/calculate'`
 
-#### Invoke
-&nbsp;&nbsp; `calculate(array)`
-
 #### Arguments
-&nbsp;&nbsp; array (array): An array containing the values and operators to be summed.
+array (array): An array containing the values and operators to be summed. Each item in the array should be `typeof` string.
 
 #### Returns
 If array contains more closing parens than opening parens.   
-&nbsp;&nbsp; (string): Bad Expression.  
+(string): Bad Expression.  
 If array is less than 3 items long.  
-&nbsp;&nbsp; (null): null  
+(null): null  
 If array meets preceding criteria.  
-&nbsp;&nbsp; (string): A string representation of the total.
+(string): A string representation of the total.
+___
 
+### `operator.add(a, b)`
+Adds the two values passed.
 
-### Operators
-All operator functions are contained within an object.
-
+#### Import
 `import operators from '../helpers/operators'`
 
-#### Invoke
-&nbsp;&nbsp; Addition - `operators.add(a, b)`  
-&nbsp;&nbsp; Subtraction - `operators.subtract(a, b)`  
-&nbsp;&nbsp; Multiplication - `operators.multiply(a, b)`  
-&nbsp;&nbsp; Division - `operators.divide(a, b)`  
+#### Arguments  
+a (number): number to use for calculation  
+b (number): number to use for calculation  
+
+#### Returns  
+(number): The resulting value.
+___
+
+### `operator.subtract(a, b)`
+Subtracts the b from a.
+
+#### Import
+`import operators from '../helpers/operators'`
 
 
 #### Arguments  
-&nbsp;&nbsp; a (number): number to use for calculation  
-&nbsp;&nbsp; b (number): number to use for calculation  
+a (number): number to use for calculation  
+b (number): number to use for calculation  
 
 #### Returns  
-&nbsp;&nbsp; (number): A new number resulting from summing the arguments.
+(number): The resulting value.
+___
+
+### `operator.multiply(a, b)`
+Multiplies the two values passed.
+
+#### Import
+`import operators from '../helpers/operators'`
+
+
+#### Arguments  
+a (number): number to use for calculation  
+b (number): number to use for calculation  
+
+#### Returns  
+(number): The resulting value.
+___
+
+### `operator.divide(a, b)`
+Divides a by b.
+
+#### Import
+`import operators from '../helpers/operators'`
+
+
+#### Arguments  
+a (number): number to use for calculation  
+b (number): number to use for calculation  
+
+#### Returns  
+(number): The resulting value.
+___
