@@ -1,7 +1,8 @@
 import * as types from './ActionTypes'
 
-export const inputString = (data) => ({
+export const inputString = (inputState, data) => ({
   type: types.INPUT_STRING,
+  inputState,
   data
 })
 

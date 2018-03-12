@@ -23,7 +23,7 @@ export const inputString = (state = '', action) => {
 export const calculateResult = (state = null, action) => {
   switch (action.type) {
     case types.INPUT_STRING:
-      return getResult(action.data)
+      return getResult(concatString(action.inputState, action.data))
     case types.CALCULATE_RESULT:
       return null
     default:
