@@ -1,0 +1,2 @@
+export const INPUT_STRING = 'INPUT_STRING'
+export const CALCULATE_RESULT = 'CALCULATE_RESULT'
