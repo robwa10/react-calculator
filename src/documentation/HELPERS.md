@@ -2,8 +2,8 @@
 Documentation relating the files found within `../src/helpers/`.  
 
 ### Table of Contents
-[calculate.js](#calculate)  
-[operators.js](#operators)  
+[calculate.js](https://github.com/robwa10/react-calculator/blob/master/src/documentation/HELPERS.md#calculatejs)  
+[operators.js](#operatorsjs)  
 [parse-string.js](#parse-string)  
 
 ## calculate.js  
