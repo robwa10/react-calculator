@@ -1,4 +1,4 @@
-# API Endpoints  
+# Endpoints  
 Basic information needed for accessing all available endpoints can be found below. For more detailed explanations regarding functionality and logic please see appropriate documentation.   
 
 ## Action Creators
@@ -47,63 +47,3 @@ If array is less than 3 items long.
 (null): null  
 If array meets criteria and is mathematically computable.  
 (string): A string representation of the total.
-___
-
-### `operator.add(a, b)`
-Adds the two values passed.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-___
-
-### `operator.subtract(a, b)`
-Subtracts the b from a.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-___
-
-### `operator.multiply(a, b)`
-Multiplies the two values passed.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-___
-
-### `operator.divide(a, b)`
-Divides a by b.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-___
