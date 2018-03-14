@@ -1,9 +1,11 @@
 const parseString = (s) => {
   let myArray = []
-  let tempString = '' // Place to hold numbers in case more than one digit
+  let tempString = '' // Place to hold numbers in case they are more than one digit
   for (var i = 0; i < s.length; i++) {
-    if (isNaN(s[i])) { // Check if s[i] is not a number
-      if (tempString.length !== 0) { // Check if a number has already been added
+    if (isNaN(s[i])) { // Check if s[i] is an operator or paren
+      if (s[i] === '-' && (i === 0 || s[i - 1] === '(')) { // Check if it's a minus or negative number
+        tempString = tempString + s[i] // Add negative before adding number
+      } else if (tempString.length !== 0) { // Check if a number has already been added
         myArray.push(tempString) // Push number
         tempString = '' // Reset tempString for new number
         myArray.push(s[i]) // Push operator
