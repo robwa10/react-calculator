@@ -14,8 +14,14 @@ describe('input string reducer', () => {
   it('should change the input string to the result', () => {
     expect(reducers.inputString('10+4*2+(2*2)', {
       type: types.CALCULATE_RESULT,
-      data: '10+4*2+(2*2)'
+      data: '22'
     })).toEqual('22')
+  })
+  it('should display the input string if result is Bad Expression', () => {
+    expect(reducers.inputString('10+4*2+(2*2))', {
+      type: types.CALCULATE_RESULT,
+      data: 'Bad Expression'
+    })).toEqual('10+4*2+(2*2))')
   })
 })
 
@@ -42,5 +48,11 @@ describe('calculate reducer', () => {
     expect(reducers.calculateResult('18', {
       type: types.CALCULATE_RESULT
     })).toEqual(null)
+  })
+  it('should return Bad Expression', () => {
+    expect(reducers.calculateResult('18', {
+      type: types.CALCULATE_RESULT,
+      data: 'Bad Expression'
+    })).toEqual('Bad Expression')
   })
 })
