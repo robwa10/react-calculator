@@ -1,8 +1,8 @@
 import React from 'react'
 import Button from '../components/button'
 import ButtonContainer from '../components/button-container'
-import Input from '../components/input'
-import InputResultContainer from '../containers/input-result-container'
+import Expression from '../components/expression'
+import ExpressionResultContainer from '../containers/expression-result-container'
 import Result from '../components/result'
 
 // Tests are in alphabetical order based on component name
@@ -51,28 +51,28 @@ it('should render 5 operator buttons', () => {
 })
 
 // ********************
-// Input Component Tests
+// Expression Component Tests
 
 const renderedInput =
-  <div className='input-container'>
-    <span className='input-text'>4+4/2*8</span>
+  <div className='expression-container'>
+    <span className='expression-text'>4+4/2*8</span>
   </div>
 
 it('should render the input div', () => {
-  expect(Input({input: '4+4/2*8'})).toEqual(renderedInput)
+  expect(Expression({input: '4+4/2*8'})).toEqual(renderedInput)
 })
 
 // ********************
 // Input and Result Container Tests
 
 const renderedDisplayContainer =
-  <div className='input-result-container'>
+  <div className='expression-result-container'>
     <Input />
     <Result />
   </div>
 
 it('should render the input and result container', () => {
-  expect(InputResultContainer({input: '4+4/2*8', result: '48'})).toEqual(renderedDisplayContainer)
+  expect(ExpressionResultContainer({input: '4+4/2*8', result: '48'})).toEqual(renderedDisplayContainer)
 })
 
 // ********************
