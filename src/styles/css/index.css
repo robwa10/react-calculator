@@ -1,3 +1,72 @@
+body {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  background-color: #FAFAFA; }
 
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh; }
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  height: 100vh;
+  max-height: 640px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+header {
+  background-color: #009688;
+  text-align: center;
+  color: #FAFAFA;
+  padding: 5px; }
+  header h1 {
+    margin: auto;
+    font-weight: 200;
+    font-size: 22px; }
+
+.expression-result-container {
+  flex-grow: 2;
+  background-color: #FFFFFF; }
+
+button {
+  font-size: 32px;
+  font-weight: 100;
+  text-align: center;
+  color: #FAFAFA;
+  background-color: transparent;
+  border: none; }
+
+.input-container {
+  flex-grow: 3;
+  display: flex;
+  flex-flow: row nowrap; }
+
+.numberpad-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #212121;
+  width: 70%; }
+
+.number-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  background-color: #212121; }
+
+.number-row:nth-child(4) button:nth-child(1) {
+  padding-left: 15px; }
+.number-row:nth-child(4) button:nth-child(2) {
+  padding-left: 10px; }
+
+.operators-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #616161;
+  width: 30%; }
 
 /*# sourceMappingURL=index.css.map */

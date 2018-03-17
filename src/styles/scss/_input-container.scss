@@ -1,0 +1,37 @@
+.input-container {
+  flex-grow: 3;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.numberpad-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $dark-grey;
+  width: 70%;
+}
+
+.number-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  background-color: $dark-grey;
+}
+
+.number-row:nth-child(4) {
+  button:nth-child(1) {
+    padding-left: 15px;
+  }
+  button:nth-child(2) {
+    padding-left: 10px;
+  }
+}
+
+.operators-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $mid-grey;
+  width: 30%;
+}
