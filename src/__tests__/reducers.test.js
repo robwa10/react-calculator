@@ -1,6 +1,9 @@
 import * as types from '../actions/ActionTypes'
 import * as reducers from '../reducers'
 
+// ********************
+// inputString Reducer Tests
+
 describe('input string reducer', () => {
   it('should return initial state', () => {
     expect(reducers.inputString(undefined, {})).toEqual('')
@@ -23,7 +26,15 @@ describe('input string reducer', () => {
       data: 'Bad Expression'
     })).toEqual('10+4*2+(2*2))')
   })
+  it('should delete the last input', () => {
+    expect(reducers.inputString('2+2-3', {
+      type: types.DELETE_ELEMENT
+    })).toEqual('2+2-')
+  })
 })
+
+// ********************
+// calculateResult Reducer Tests
 
 describe('calculate reducer', () => {
   it('should return initial state', () => {
