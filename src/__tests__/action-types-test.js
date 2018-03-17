@@ -7,4 +7,7 @@ describe('action types', () => {
   it('should equal CALCULATE_RESULT', () => {
     expect(types.CALCULATE_RESULT).toEqual('CALCULATE_RESULT')
   })
+  it('should equal DELETE_ELEMENT', () => {
+    expect(types.DELETE_ELEMENT).toEqual('DELETE_ELEMENT')
+  })
 })
