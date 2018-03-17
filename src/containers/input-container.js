@@ -5,14 +5,31 @@ import ButtonContainer from '../components/button-container'
 class InputContainer extends Component {
   render () {
     const operators = ['DEL', '/', 'x', '-', '+']
-    const numberpad = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '.', '0', '=']
+    const numberRowOne = ['7', '8', '9']
+    const numberRowTwo = ['4', '5', '6']
+    const numberRowThree = ['1', '2', '3']
+    const numberRowFour = ['.', '0', '=']
 
     return (
       <div className='input-container'>
-        <ButtonContainer
-          buttonArray={numberpad}
-          myClass='numberpad-container'
-        />
+        <div className='numberpad-container'>
+          <ButtonContainer
+            buttonArray={numberRowOne}
+            myClass='number-row'
+          />
+          <ButtonContainer
+            buttonArray={numberRowTwo}
+            myClass='number-row'
+          />
+          <ButtonContainer
+            buttonArray={numberRowThree}
+            myClass='number-row'
+          />
+          <ButtonContainer
+            buttonArray={numberRowFour}
+            myClass='number-row'
+          />
+        </div>
         <ButtonContainer
           buttonArray={operators}
           myClass='operators-container'
