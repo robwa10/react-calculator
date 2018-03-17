@@ -2,11 +2,11 @@ import React from 'react'
 import Expression from '../components/expression'
 import Result from '../components/result'
 
-const ExpressionResultContainer = ({ input, result }) => {
+const ExpressionResultContainer = ({ expression, result }) => {
   return (
-    <div className='input-result-container'>
-      <Expression />
-      <Result />
+    <div className='expression-result-container'>
+      <Expression expression={expression} />
+      <Result result={result} />
     </div>
   )
 }
