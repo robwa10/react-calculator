@@ -1,7 +1,35 @@
 import React from 'react'
+import Input from '../components/input'
 import Result from '../components/result'
 import NumberPad from '../components/numberpad'
 import Button from '../components/button'
+import InputResultContainer from '../containers/input-result-container'
+
+// ********************
+// Input and Result Container Tests
+
+const renderedDisplayContainer =
+  <div className='input-result-container'>
+    <Input />
+    <Result />
+  </div>
+
+it('should render the input and result container', () => {
+  expect(InputResultContainer({input: '4+4/2*8', result: '48'})).toEqual(renderedDisplayContainer)
+})
+
+
+// ********************
+// Input Component Tests
+
+const renderedInput =
+  <div className='input-container'>
+    <span className='input-text'>4+4/2*8</span>
+  </div>
+
+it('should render the input div', () => {
+  expect(Input({input: '4+4/2*8'})).toEqual(renderedInput)
+})
 
 // ********************
 // Result Component Tests
