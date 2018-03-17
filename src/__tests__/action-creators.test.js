@@ -20,4 +20,10 @@ describe('actions', () => {
     }
     expect(actions.calculateResult(data)).toEqual(expectedAction)
   })
+  it('should create an action to delete last input', () => {
+    const expectedAction = {
+      type: types.DELETE_ELEMENT
+    }
+    expect(actions.deleteElement()).toEqual(expectedAction)
+  })
 })
