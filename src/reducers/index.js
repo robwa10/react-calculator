@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux'
 import * as types from '../actions/ActionTypes'
 import parseString from '../helpers/parse-string'
 import calculate from '../helpers/calculate'
@@ -47,3 +48,8 @@ export const calculateResult = (state = null, action) => {
       return state
   }
 }
+
+export default combineReducers({
+  input: inputString,
+  result: calculateResult
+})
