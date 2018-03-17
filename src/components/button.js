@@ -2,12 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Button = ({ buttonText, onClick }) => (
-  <div className='button-container'>
-    <button
-      onClick={onClick}
-      className='button-text'
-      >{buttonText}</button>
-  </div>
+  <button onClick={onClick}>{buttonText}</button>
 )
 
 export default Button
