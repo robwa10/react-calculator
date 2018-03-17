@@ -10,3 +10,7 @@ export const calculateResult = (data) => ({
   type: types.CALCULATE_RESULT,
   data
 })
+
+export const deleteElement = () => ({
+  type: types.DELETE_ELEMENT
+})
