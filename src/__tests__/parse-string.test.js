@@ -18,4 +18,8 @@ describe('parsing the input', () => {
     expect(parseString('-10+2+(-20*4)'))
     .toEqual(['-10', '+', '2', '+', '(', '-20', '*', '4', ')'])
   })
+  it('should parse decimal numbers', () => {
+    expect(parseString('-10+2.5+4'))
+    .toEqual(['-10', '+', '2.5', '+', '4'])
+  })
 })
