@@ -35,19 +35,23 @@ header {
   justify-content: flex-end; }
 
 .expression-container {
-  height: 80px;
+  height: 70px;
   color: #212121;
   font-size: 42px;
   margin: 20px 10px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; }
 
 .result-container {
-  height: 30px;
+  height: 40px;
   color: #616161;
-  font-size: 26px;
-  margin: 10px; }
+  font-size: 36px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
 
 button {
   font-size: 32px;

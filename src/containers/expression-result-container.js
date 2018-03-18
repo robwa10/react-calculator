@@ -6,12 +6,10 @@ import Result from '../components/result'
 const ExpressionResultContainer = (props) => {
   let textStyle = {}
 
-  if (props.input.length > 19) {
-    textStyle = {'fontSize': 22}
-  } else if (props.input.length > 16) {
-    textStyle = {'fontSize': 28}
+  if (props.input.length > 16) {
+    textStyle = {'fontSize': 30}
   } else if (props.input.length > 12) {
-    textStyle = {'fontSize': 32}
+    textStyle = {'fontSize': 36}
   }
 
   return (

@@ -7,18 +7,22 @@
 }
 
 .expression-container {
-  height: 80px;
+  height: 70px;
   color: $dark-grey;
   font-size: 42px;
   margin: 20px 10px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 .result-container {
-  height: 30px;
+  height: 40px;
   color: $mid-grey;
-  font-size: 26px;
-  margin: 10px;
+  font-size: 36px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
