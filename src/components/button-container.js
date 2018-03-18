@@ -1,22 +1,52 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 import Button from './button'
 
-const ButtonContainer = ({ buttonArray, myClass }) => {
-  // Button has a currently unpassed prop of onClick
-  return (
-    <div className={myClass}>
-      {buttonArray.map(item => (
-        <Button
-          key={item}
-          buttonText={item}
-        />
-      ))}
-    </div>
-  )
+class ButtonContainer extends Component {
+  constructor (props) {
+    super(props)
+    this.buttonClick = this.buttonClick.bind(this)
+  }
+
+  buttonClick (button) {
+    switch (button) {
+      case 'DEL':
+        this.props.deleteElement(this.props.input)
+        break
+      case '=':
+        this.props.calculateResult(this.props.result)
+        break
+      case 'CLR':
+        this.props.clearAll()
+        break
+      default:
+        this.props.inputString(this.props.input, button)
+    }
+  }
+
+  render () {
+    return (
+      <div className={this.props.myClass}>
+        {this.props.buttonArray.map(item => (
+          <Button
+            key={item}
+            buttonText={item}
+            onClick={() => this.buttonClick(item)}
+          />
+        ))}
+      </div>
+    )
+  }
 }
 
-export default ButtonContainer
+const mapStateToProps = (state) => ({
+  input: state.input,
+  result: state.result
+})
+
+export default connect(mapStateToProps, actions)(ButtonContainer)
 
 ButtonContainer.propTypes = {
   buttonArray: PropTypes.array,
