@@ -1,5 +1,5 @@
 .input-container {
-  flex-grow: 3;
+  flex-grow: 1;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
   background-color: $dark-grey;
-  width: 70%;
+  width: 75%;
 }
 
 .number-row {
@@ -20,11 +20,14 @@
 }
 
 .number-row:nth-child(4) {
-  button:nth-child(1) {
-    padding-left: 15px;
+  button:nth-child(-n+2) {
+    margin-left: 8px;
   }
-  button:nth-child(2) {
-    padding-left: 10px;
+}
+
+.number-row:nth-child(5) {
+  button {
+    font-size: 26px;
   }
 }
 
@@ -33,5 +36,13 @@
   flex-direction: column;
   justify-content: space-around;
   background-color: $mid-grey;
-  width: 30%;
+  width: 25%;
+
+  button {
+    font-size: 28px;
+  }
+
+  button:nth-child(1) {
+    font-size: 22px;
+  }
 }
