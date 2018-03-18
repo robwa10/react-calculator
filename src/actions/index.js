@@ -11,6 +11,7 @@ export const calculateResult = (data) => ({
   data
 })
 
-export const deleteElement = () => ({
-  type: types.DELETE_ELEMENT
+export const deleteElement = (inputState, data) => ({
+  type: types.DELETE_ELEMENT,
+  inputState
 })
