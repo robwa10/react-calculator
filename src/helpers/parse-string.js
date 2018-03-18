@@ -14,7 +14,8 @@ const parseString = (s) => {
       }
     } else {
       if (i === s.length - 1) { //  Check if it's last item in string
-        myArray.push(s[i])
+        tempString = tempString + s[i]
+        myArray.push(tempString)
       } else {
         tempString = tempString + s[i]
       }
