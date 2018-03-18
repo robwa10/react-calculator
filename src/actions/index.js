@@ -15,3 +15,7 @@ export const deleteElement = (inputState, data) => ({
   type: types.DELETE_ELEMENT,
   inputState
 })
+
+export const clearAll = () => ({
+  type: types.CLEAR_ALL
+})

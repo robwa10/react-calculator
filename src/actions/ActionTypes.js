@@ -1,3 +1,4 @@
 export const INPUT_STRING = 'INPUT_STRING'
 export const CALCULATE_RESULT = 'CALCULATE_RESULT'
 export const DELETE_ELEMENT = 'DELETE_ELEMENT'
+export const CLEAR_ALL = 'CLEAR_ALL'

@@ -33,6 +33,8 @@ export const inputString = (state = '', action) => {
       return removeLastElement(state)
     case types.CALCULATE_RESULT:
       return action.data === 'Bad Expression' ? state : action.data
+    case types.CLEAR_ALL:
+      return ''
     default:
       return state
   }
@@ -46,6 +48,8 @@ export const calculateResult = (state = null, action) => {
       return calculate(parseString(removeLastElement(action.inputState)))
     case types.CALCULATE_RESULT:
       return action.data === 'Bad Expression' ? action.data : null
+    case types.CLEAR_ALL:
+      return null
     default:
       return state
   }
