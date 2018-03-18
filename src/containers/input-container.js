@@ -4,7 +4,7 @@ import ButtonContainer from '../components/button-container'
 
 class InputContainer extends Component {
   render () {
-    let operators = ['DEL', '/', '*', '-', '+']
+    let operators = ['DEL', '÷', 'x', '-', '+']
     let numberRowOne = ['7', '8', '9']
     let numberRowTwo = ['4', '5', '6']
     let numberRowThree = ['1', '2', '3']
