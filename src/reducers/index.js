@@ -42,6 +42,8 @@ export const calculateResult = (state = null, action) => {
   switch (action.type) {
     case types.INPUT_STRING:
       return getResult(action.inputState, action.data)
+    case types.DELETE_ELEMENT:
+      return calculate(parseString(removeLastElement(action.inputState)))
     case types.CALCULATE_RESULT:
       return action.data === 'Bad Expression' ? action.data : null
     default:
