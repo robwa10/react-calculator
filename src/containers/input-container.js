@@ -4,11 +4,12 @@ import ButtonContainer from '../components/button-container'
 
 class InputContainer extends Component {
   render () {
-    const operators = ['DEL', '/', '*', '-', '+']
-    const numberRowOne = ['7', '8', '9']
-    const numberRowTwo = ['4', '5', '6']
-    const numberRowThree = ['1', '2', '3']
-    const numberRowFour = ['.', '0', '=']
+    let operators = ['DEL', '/', '*', '-', '+']
+    let numberRowOne = ['7', '8', '9']
+    let numberRowTwo = ['4', '5', '6']
+    let numberRowThree = ['1', '2', '3']
+    let numberRowFour = ['.', '0', '=']
+    let numberRowFive = ['CLR', '(', ')']
 
     return (
       <div className='input-container'>
@@ -27,6 +28,10 @@ class InputContainer extends Component {
           />
           <ButtonContainer
             buttonArray={numberRowFour}
+            myClass='number-row'
+          />
+          <ButtonContainer
+            buttonArray={numberRowFive}
             myClass='number-row'
           />
         </div>
