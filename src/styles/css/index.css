@@ -39,6 +39,7 @@ header {
   color: #212121;
   font-size: 42px;
   margin: 20px 10px;
+  letter-spacing: 2px;
   overflow: scroll;
   display: flex;
   flex-direction: column;
