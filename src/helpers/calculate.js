@@ -1,5 +1,7 @@
 import operators from '../helpers/operators'
 
+const operatorsArray = ['*', '+', '-', '/']
+
 const badExpression = () => ('Bad Expression')
 
 // Evaluate which mathamtical function should be perfomed based on operator passed
@@ -20,10 +22,12 @@ const callOperator = (op, a, b) => {
 
 // Loop through array, calling mathmatical operations and passing appropriate values
 const getTotal = (v) => {
-  let total = v[0] // Initially set total as first number in array
+  let total = v[0] // Initially set total as first element in array
   for (var i = 0; i < v.length; i++) {
-    if (isNaN(Number(v[i]))) { // Check if i is an operator
-      total = callOperator(v[i], total, v[i + 1])
+    if (isNaN(Number(v[i]))) {
+      if (operatorsArray.includes(v[i])) {
+        total = callOperator(v[i], total, v[i + 1])
+      }
     }
   }
   return total
@@ -107,7 +111,7 @@ const calculate = (array) => {
 
   // Check if array ends in unused operator
   if (isNaN(Number(le)) && le !== ')') {
-    ac.pop() // Remove unneeded operator
+    ac.pop()
   }
 
   // Check for more closing paren than opening
@@ -117,8 +121,13 @@ const calculate = (array) => {
     return null
   }
 
-  // Calculate array
-  return findParens(ac).toString()
+  let total = findParens(ac).toString()
+
+  if (isNaN(total)) {
+    return badExpression()
+  }
+
+  return total
 }
 
 export default calculate
