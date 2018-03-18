@@ -10,13 +10,19 @@ class ButtonContainer extends Component {
     this.buttonClick = this.buttonClick.bind(this)
   }
 
+  validateEquals () {
+    if (this.props.result !== null) {
+      this.props.calculateResult(this.props.result)
+    }
+  }
+
   buttonClick (button) {
     switch (button) {
       case 'DEL':
         this.props.deleteElement(this.props.input)
         break
       case '=':
-        this.props.calculateResult(this.props.result)
+        this.validateEquals()
         break
       case 'CLR':
         this.props.clearAll()
