@@ -9,9 +9,9 @@ body {
 
 .container {
   width: 100%;
-  max-width: 360px;
+  max-width: 500px;
   height: 100vh;
-  max-height: 640px;
+  max-height: 900px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -106,7 +106,7 @@ button:active {
   .operators-container button:nth-child(1) {
     font-size: 22px; }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 500px) {
   .container {
     box-shadow: 10px 10px 15px rgba(33, 33, 33, 0.2); } }
 
