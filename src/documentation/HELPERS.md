@@ -3,11 +3,13 @@ Documentation relating the files found within `../src/helpers/`.
 
 ### Table of Contents
 [calculate.js](#calculatejs)  
-&nbsp;&nbsp;&nbsp;&nbsp; Logic for making calculations.  
+ - Logic for making calculations.    
+
 [operators.js](#operatorsjs)  
-&nbsp;&nbsp;&nbsp;&nbsp; Object containing methods for computing sums with operators.  
+ - Object containing methods for computing sums with operators.  
+
 [parse-string.js](#parse-stringjs)  
-&nbsp;&nbsp;&nbsp;&nbsp; Used to parse user input string into array for calculation.  
+ - Used to parse user input string into array for calculation.  
 
 ## calculate.js  
 
