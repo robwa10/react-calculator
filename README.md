@@ -2,15 +2,15 @@
 
 A React based calculator utilizing Redux for state management.  A personal project undertaken to increase understanding, skills and refresh knowledge in the following areas:
 1. JavaScript at Large
- - The challenge of creating the logic to compute calculations is a great way to dive deeper into JavaScript.
+  - The challenge of creating the logic to compute calculations is a great way to dive deeper into JavaScript.
 2. Test Driven Development
- - The logic of the calculator was created first utilizing [Jest](https://facebook.github.io/jest/) to drive testing and development.
+  - The logic of the calculator was created first utilizing [Jest](https://facebook.github.io/jest/) to drive testing and development.
 3. Progressive Web App
- - (In Development) The calculator should function as a native app.
+  - (In Development) The calculator should function as a native app.
 4. React
- - React's compositional nature make it ideal to develop the components of the calculator.
+  - React's compositional nature make it ideal to develop the components of the calculator.
 5. Redux  
- - Although state could have been managed in React I decided to use Redux to refresh familiarity with it's syntax.
+  - Although state could have been managed in React I decided to use Redux to refresh familiarity with it's syntax.
 
 ## Documentation  
 [Endpoints](src/documentation/ENDPOINTS.md)  
