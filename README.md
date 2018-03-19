@@ -1,5 +1,7 @@
 # React-Redux Calculator  
 
+[Live Demo](https://my-react-calculator.herokuapp.com/)  
+
 A React based calculator utilizing Redux for state management.  A personal project undertaken to increase understanding, skills and refresh knowledge in the following areas:  
 
 **JavaScript at Large** - The challenge of creating the logic to compute calculations is a great way to dive deeper into JavaScript.  
