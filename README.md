@@ -22,13 +22,12 @@ Redux
 [Helper Functions](src/documentation/HELPERS.md)  
 [Reducers](src/documentation/REDUCERS.md)
 
-## Development Schedule  
-Planned improvements (in order of development)  
- 1. Turn into PWA.
- 2. Refactor React components.  
- 3. Refactor calculator logic.
- 4. Add additional standard calculator operators such as sin, cos.
- 5. Add buttons that can store variables.
+## Task List  
+- [ ] Turn into PWA.
+- [ ] Refactor React components.  
+- [ ] Refactor calculator logic.
+- [ ] Add additional operators such as sin, cos, tan.
+- [ ] Add buttons for storing variables.
 
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
