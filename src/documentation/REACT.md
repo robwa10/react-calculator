@@ -41,7 +41,7 @@ Checks if `this.props.result` is not null. If true invokes `this.props.calculate
 
 ___  
 ### expression-result-container.js  
-Container for components used to display input string and result.  
+Container for components used to display input and result.  
 
 #### Properties  
 
