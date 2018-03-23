@@ -1,10 +1,10 @@
 # React Containers and Components  
-Documentation relating to all React Components and Containers including props and any component based handling of state. For documentation of Redux state please see [REDUCERS.md](REDUCERS.md).  
+Documentation relating to all React Containers and Components including props and any component based handling of state. For documentation of Redux state please see [REDUCERS.md](REDUCERS.md).  
 
 ## Containers    
 
 ### button-container.js  
-Used to hold multiple buttons, i.e. a numberpad.  
+Used to hold multiple `<Button />`, i.e. a number pad.  
 
 #### Properties  
 
@@ -16,7 +16,7 @@ Used to hold multiple buttons, i.e. a numberpad.
 
 #### Methods
 `buttonClick(button)`  
-Uses a switch statement to validate which value was passed when onClick is called by button.  
+Uses a switch statement to validate which value was passed when onClick is called by `<Button />`.  
 
 |Case|Invokes|
 |----|-------|
@@ -26,7 +26,7 @@ Uses a switch statement to validate which value was passed when onClick is calle
 |default|this.props.inputString(this.props.input, button)|
 
 `validateEquals()`  
-Checks if this.props.result is not null. Invokes this.props.calculateResult(this.props.result)  
+Checks if `this.props.result` is not null. If true invokes `this.props.calculateResult(this.props.result)`  
 
 #### Render  
     <div className={this.props.myClass}>
