@@ -1,10 +1,9 @@
-# React Components and Containers
+# React Containers and Components  
 Documentation relating to all React Components and Containers including props and any component based handling of state. For documentation of Redux state please see [REDUCERS.md](REDUCERS.md).  
 
 ## Containers    
 
 ### button-container.js  
-___
 Used to hold multiple buttons, i.e. a numberpad.  
 
 #### Properties  
@@ -40,8 +39,8 @@ Checks if this.props.result is not null. Invokes this.props.calculateResult(this
       ))}
     </div>
 
+___  
 ### expression-result-container.js  
-___
 Container for components used to display input string and result.  
 
 #### Properties  

@@ -13,6 +13,7 @@ A React based calculator utilizing Redux for state management.  A personal proje
 ## Documentation  
 [Endpoints](src/documentation/ENDPOINTS.md)  
 [Helper Functions](src/documentation/HELPERS.md)  
+[React Components](src/documentation/REACT.md)  
 [Reducers](src/documentation/REDUCERS.md)
 
 ## Task List  
