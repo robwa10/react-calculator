@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import Expression from '../components/expression'
 import Result from '../components/result'
 
@@ -28,3 +29,8 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, null)(ExpressionResultContainer)
+
+ExpressionResultContainer.propTypes = {
+  input: PropTypes.string,
+  result: PropTypes.string
+}
