@@ -40,6 +40,7 @@ Checks if `this.props.result` is not null. If true invokes `this.props.calculate
     </div>
 
 ___  
+
 ### expression-result-container.js  
 Container for components used to display input and result.  
 
@@ -57,3 +58,105 @@ Container for components used to display input and result.
         style={textStyle} />
       <Result result={props.result} />
     </div>
+
+## Components
+
+### button.js  
+A simple button.
+
+#### Properties  
+
+|Name|Type|Description|
+|-|-|-|
+|buttonText|string|String to be displayed in the button.|
+|onClick|function|Function to be executed on button press.|
+
+#### Render  
+`<button onClick={onClick}>{buttonText}</button>`  
+
+___  
+
+### expression.js  
+Used to display user input/mathematical expression.  
+
+#### Properties  
+
+|Name|Type|Description|
+|-|-|-|
+|expression|string|Text to be displayed as current mathematical expression.|
+|style|object|(optional) Object containing styling for expression.|
+
+#### Render  
+    <div className='expression-container' style={style}>
+      <span className='expression-text'>{expression}</span>
+    </div>
+
+___  
+
+### header.js  
+A simple header.  
+
+#### Properties  
+none
+
+#### Render  
+`<header><h1>React-Redux Calculator</h1></header>`  
+
+___  
+
+### input-container.js  
+Used to hold all input buttons.  
+
+#### Properties  
+
+|Name|Type|Description|
+|-|-|-|
+|operators|array|Array of operators to be displayed as individual buttons.|
+
+#### Render  
+    <div className='input-container'>
+      <div className='numberpad-container'>
+        <ButtonContainer
+          buttonArray={numberRowOne}
+          myClass='number-row'
+        />
+        <ButtonContainer
+          buttonArray={numberRowTwo}
+          myClass='number-row'
+        />
+        <ButtonContainer
+          buttonArray={numberRowThree}
+          myClass='number-row'
+        />
+        <ButtonContainer
+          buttonArray={numberRowFour}
+          myClass='number-row'
+        />
+        <ButtonContainer
+          buttonArray={numberRowFive}
+          myClass='number-row'
+        />
+      </div>
+      <ButtonContainer
+        buttonArray={operators}
+        myClass='operators-container'
+      />
+    </div>
+
+___  
+
+### result.js  
+Used to display evaluation of current mathematical expression.  
+
+#### Properties  
+
+|Name|Type|Description|
+|-|-|-|
+|result|string|Text to be displayed as evaluation of the mathematical expression.|
+
+#### Render  
+    <div className='result-container'>
+      <span className='result-text'>{result}</span>
+    </div>
+
+___
