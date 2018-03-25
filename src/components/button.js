@@ -8,5 +8,6 @@ const Button = ({ buttonText, onClick }) => (
 export default Button
 
 Button.propTypes = {
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
+  onClick: PropTypes.func
 }
