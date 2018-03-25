@@ -17,7 +17,7 @@ A React based calculator utilizing Redux for state management.  A personal proje
 [Reducers](src/documentation/REDUCERS.md)
 
 ## Task List  
-- [ ] Add React Components documentation.
+- [x] Add React Components documentation.
 - [ ] Turn into PWA.
 - [ ] Refactor React components.  
 - [ ] Refactor calculator logic.
