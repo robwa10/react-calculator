@@ -47,6 +47,5 @@ class InputContainer extends Component {
 export default InputContainer
 
 InputContainer.propTypes = {
-  numberpad: PropTypes.array,
   operators: PropTypes.array
 }
