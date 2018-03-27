@@ -3,6 +3,32 @@ Documentation relating to all React Containers and Components including props an
 
 ## Containers    
 
+### expression-result-container.js  
+Container for components used to display input and result.  
+
+#### Properties  
+|Name|Type|Description|
+|-|-|-|
+|input|string|String representation of the user input.|
+|result|string|String representation of the result of input.|
+|inputTextStyle|object|Object containing styles for expression-container. fontSize changes based on props.input.length.|
+
+#### Render  
+    <div className='expression-result-container'>
+      <DisplayBox
+        divClassName='expression-container'
+        spanClassName='expression-text'
+        divStyle={inputTextStyle}
+        text={props.input}
+      />
+      <DisplayBox
+        divClassName='result-container'
+        spanClassName='result-text'
+        text={props.result}
+      />
+    </div>
+___
+
 ### input-container.js  
 Used to render all input buttons in appropriate containers.  
 
@@ -25,7 +51,6 @@ Uses a switch statement to validate which value was passed when onClick is calle
 
 `validateEquals()`  
 Checks if `this.props.result` is not null. If true invokes `this.props.calculateResult(this.props.result)`  
-
 
 #### Render  
     let operators = ['DEL', '÷', 'x', '-', '+']
@@ -65,33 +90,6 @@ Checks if `this.props.result` is not null. If true invokes `this.props.calculate
         </div>
       </div>
     )
-
-___  
-
-### expression-result-container.js  
-Container for components used to display input and result.  
-
-#### Properties  
-|Name|Type|Description|
-|-|-|-|
-|input|string|String representation of the user input.|
-|result|string|String representation of the result of input.|
-|inputTextStyle|object|Object containing styles for expression-container. fontSize changes based on props.input.length.|
-
-#### Render  
-    <div className='expression-result-container'>
-      <DisplayBox
-        divClassName='expression-container'
-        spanClassName='expression-text'
-        divStyle={inputTextStyle}
-        text={props.input}
-      />
-      <DisplayBox
-        divClassName='result-container'
-        spanClassName='result-text'
-        text={props.result}
-      />
-    </div>
 
 ## Components
 
