@@ -1,24 +1,30 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Expression from '../components/expression'
-import Result from '../components/result'
+import DisplayBox from '../components/display-box'
 
 const ExpressionResultContainer = (props) => {
-  let textStyle = {}
+  let inputTextStyle = {}
 
   if (props.input.length > 13) {
-    textStyle = {'fontSize': 30}
+    inputTextStyle = {'fontSize': 30}
   } else if (props.input.length > 11) {
-    textStyle = {'fontSize': 36}
+    inputTextStyle = {'fontSize': 36}
   }
 
   return (
     <div className='expression-result-container'>
-      <Expression
-        expression={props.input}
-        style={textStyle} />
-      <Result result={props.result} />
+      <DisplayBox
+        mainClassName='expression-container'
+        spanClassName='expression-text'
+        divStyle={inputTextStyle}
+        text={props.input}
+      />
+      <DisplayBox
+        mainClassName='result-container'
+        spanClassName='result-text'
+        text={props.result}
+      />
     </div>
   )
 }
