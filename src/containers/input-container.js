@@ -45,9 +45,9 @@ class InputContainer extends Component {
     return (
       <div className='input-container'>
         <div className='numberpad-container'>
-          {numberPad.map(element => {
+          {numberPad.map((element, index) => {
             return (
-              <div className='number-row' key={Math.floor(Math.random() * 100)}>
+              <div className='number-row' key={index}>
                 {element.map(item => (
                   <Button
                     key={item}
