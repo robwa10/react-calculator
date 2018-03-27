@@ -81,6 +81,8 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, actions)(InputContainer)
 
 InputContainer.propTypes = {
+  input: PropTypes.string,
+  result: PropTypes.string,
   operators: PropTypes.array,
   numberPad: PropTypes.array
 }

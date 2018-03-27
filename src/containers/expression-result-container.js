@@ -15,13 +15,13 @@ const ExpressionResultContainer = (props) => {
   return (
     <div className='expression-result-container'>
       <DisplayBox
-        mainClassName='expression-container'
+        divClassName='expression-container'
         spanClassName='expression-text'
         divStyle={inputTextStyle}
         text={props.input}
       />
       <DisplayBox
-        mainClassName='result-container'
+        divClassName='result-container'
         spanClassName='result-text'
         text={props.result}
       />

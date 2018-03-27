@@ -11,10 +11,10 @@ A React based calculator utilizing Redux for state management.  A personal proje
 **Redux** - Although state could have been managed in React I decided to use Redux to refresh familiarity with it's syntax.  
 
 ## Documentation  
-[Endpoints](src/documentation/ENDPOINTS.md)  
-[Helper Functions](src/documentation/HELPERS.md)  
-[React Components](src/documentation/REACT.md)  
-[Reducers](src/documentation/REDUCERS.md)
+[Endpoints](src/docs/ENDPOINTS.md)  
+[Helper Functions](src/docs/HELPERS.md)  
+[React Components](src/docs/REACT.md)  
+[Reducers](src/docs/REDUCERS.md)
 
 ## Task List  
 - [x] Add React Components documentation.
