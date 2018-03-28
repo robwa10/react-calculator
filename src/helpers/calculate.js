@@ -5,8 +5,8 @@ const operatorsArray = ['*', '+', '-', '/']
 const badExpression = () => ('Bad Expression')
 
 // Evaluate which mathamtical function should be perfomed based on operator passed
-const callOperator = (op, a, b) => {
-  switch (op) {
+const callOperator = (operator, a, b) => {
+  switch (operator) {
     case '+':
       return operators.add(Number(a), Number(b))
     case '-':
@@ -21,12 +21,12 @@ const callOperator = (op, a, b) => {
 }
 
 // Loop through array, calling mathmatical operations and passing appropriate values
-const getTotal = (v) => {
-  let total = v[0] // Initially set total as first element in array
-  for (var i = 0; i < v.length; i++) {
-    if (isNaN(Number(v[i]))) {
-      if (operatorsArray.includes(v[i])) {
-        total = callOperator(v[i], total, v[i + 1])
+const getTotal = (anArray) => {
+  let total = anArray[0] // Initially set total as first element in array
+  for (var i = 0; i < anArray.length; i++) {
+    if (isNaN(Number(anArray[i]))) {
+      if (operatorsArray.includes(anArray[i])) {
+        total = callOperator(anArray[i], total, anArray[i + 1])
       }
     }
   }
@@ -34,46 +34,46 @@ const getTotal = (v) => {
 }
 
 // Recreate the array, calculating precedence first
-const calculatePrecedence = (v) => {
-  // let isOdd = (num) => (num % 2)
-  let myArray = v // Create a copy to mutate
-  for (var i = 0; i < v.length; i++) {
-    if (isNaN(Number(v[i]))) { // Check for operator
-      if (v[i] === '*' || v[i] === '/') {
-        // Calculate total of operation on values
-        let t = getTotal([v[i - 1], v[i], v[i + 1]]).toString()
-        // Replace original operator and values in array copy
-        myArray.splice(i - 1, 3, t)
-        return calculatePrecedence(myArray) // Call function again, passing mutated array
-      }
+const calculatePrecedence = (anArray) => {
+  let arrayCopy = anArray
+  let length = anArray.length
+
+  for (var i = 0; i < length; i++) {
+    let element = anArray[i]
+    if (element === '*' || element === '/') {
+      let total = callOperator(
+        element, anArray[i - 1], anArray[i + 1]
+      ).toString()
+      arrayCopy.splice(i - 1, 3, total)
+      calculatePrecedence(arrayCopy)
     }
   }
-  return getTotal(myArray)
+  return getTotal(arrayCopy)
 }
 
-// Determine if * or / operators present
-const checkOperators = (v) => {
-  if (v.includes('*') || v.includes('/')) {
-    return calculatePrecedence(v)
+// Determine if * or / operators present to save uneeded function call
+const checkOperators = (anArray) => {
+  if (anArray.includes('*') || anArray.includes('/')) {
+    return calculatePrecedence(anArray)
   } else {
-    return getTotal(v)
+    return getTotal(anArray)
   }
 }
 
-// Calculate amount in parens first
-const calculateParens = (v, op, cp) => {
-  let arrayCopy = v // Copy of array to mutate
+// Calculate the amount in parens
+const calculateParens = (anArray, op, cp) => {
+  let arrayCopy = anArray
   let end = cp
 
   if (cp === -1) {
     end = undefined
   }
 
-  const parenElements = v.slice(op + 1, end) // Get elements in parens to sum
-  const parenTotal = checkOperators(parenElements).toString() // Calculate amount in parens
+  const parenElements = anArray.slice(op + 1, end)
+  const parenTotal = checkOperators(parenElements).toString()
 
   if (cp === -1) {
-    let arrayStart = v.slice(0, op)
+    let arrayStart = anArray.slice(0, op)
     arrayStart.push(parenTotal)
     arrayCopy = arrayStart
   } else {
@@ -84,46 +84,46 @@ const calculateParens = (v, op, cp) => {
   return arrayCopy
 }
 
-const findParens = (v, i) => {
-  const ac = v // Copy of array
-  const op = ac.indexOf('(', i) // Get index of opening paren
-  const cp = ac.indexOf(')') // Get index of first closing paren
+// If there are parens inside of parens then the innermost parens must be calculated first
+// and then the function should recursively back out, calculating innermost parens as it goes.
+const findParens = (anArray, i) => {
+  const openParen = anArray.indexOf('(', i)
+  const closeParen = anArray.indexOf(')')
 
-  // If no parens return array
-  if (ac.includes('(') === false) {
-    return checkOperators(ac)
+  if (anArray.includes('(') === false) { // Escape and endless loop once all parens calculated
+    return checkOperators(anArray)
   // If nothing between two parens perform calculation and check for more
-  } else if (ac.indexOf('(', op + 1) > cp || ac.indexOf('(', op + 1) === -1) {
-    let newArray = calculateParens(ac, op, cp)
+  } else if (anArray.indexOf('(', openParen + 1) > closeParen || anArray.indexOf('(', openParen + 1) === -1) {
+    let newArray = calculateParens(anArray, openParen, closeParen)
     return findParens(newArray)
-  } else { // Search again for parens without parens between
-    return findParens(ac, op + 1)
+  } else { // Find parens inside parens
+    return findParens(anArray, openParen + 1)
   }
 }
 
 // Exported function
-const calculate = (array) => {
-  // Set some initial variables
-  let ac = array // Copy of array to mutate
-  const le = ac[ac.length - 1] // Last element in the array
-  const opt = ac.filter(x => x === '(').length // Number of opening parens
-  const cpt = ac.filter(x => x === ')').length // Number of closing parens
+const calculate = (anArray) => {
+  let arrayCopy = anArray
+  let lastElement = arrayCopy[arrayCopy.length - 1]
+  let total
 
-  // Check if array ends in unused operator
-  if (isNaN(Number(le)) && le !== ')') {
-    ac.pop()
+  // Trailing operator should be removed
+  if (isNaN(Number(lastElement)) && lastElement !== ')') {
+    arrayCopy.pop()
   }
 
-  // Check for more closing paren than opening
-  if (cpt > opt) {
+  // Cannot calculate with more closing paren than opening
+  if (arrayCopy.filter(x => x === ')').length > arrayCopy.filter(x => x === '(').length) {
     return badExpression()
-  } else if (ac.length < 3) {
+  } else if (arrayCopy.length < 3) {
     return null
+  } else if (arrayCopy.includes('(')) {
+    total = findParens(arrayCopy).toString()
+  } else {
+    total = checkOperators(anArray).toString()
   }
 
-  let total = findParens(ac).toString()
-
-  if (isNaN(total)) {
+  if (isNaN(total)) { // Final check for valid total
     return badExpression()
   }
 
