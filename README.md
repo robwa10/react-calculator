@@ -20,9 +20,7 @@ A React based calculator utilizing Redux for state management.  A personal proje
 - [x] Add React Components documentation.
 - [x] Turn into PWA.
 - [x] Refactor React components.  
-- [x] Refactor calculator logic.
-- [ ] Add additional operators such as sin, cos, tan.
-- [ ] Add buttons for storing variables.
+- [x] Refactor calculator logic.  
 
 ___
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
