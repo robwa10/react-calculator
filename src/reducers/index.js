@@ -25,7 +25,7 @@ const getResult = (input, data) => {
 // ********************
 // Reducers
 
-const inputString = (state = '', action) => {
+export const inputString = (state = '', action) => {
   switch (action.type) {
     case types.INPUT_STRING:
       return concatString(state, action.data)
@@ -40,7 +40,7 @@ const inputString = (state = '', action) => {
   }
 }
 
-const calculateResult = (state = null, action) => {
+export const calculateResult = (state = null, action) => {
   switch (action.type) {
     case types.INPUT_STRING:
       return getResult(action.inputState, action.data)
