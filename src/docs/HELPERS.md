@@ -5,9 +5,6 @@ Documentation relating the files found within `../src/helpers/`.
 [calculate.js](#calculatejs)  
  - Logic for making calculations.    
 
-[operators.js](#operatorsjs)  
- - Object containing methods for computing sums with operators.  
-
 [parse-string.js](#parse-stringjs)  
  - Used to parse user input string into array for calculation.  
 
@@ -33,65 +30,7 @@ If array meets criteria and is mathematically computable.
 </br>
 </br>
 </br>
-## operators.js
 
-### Exported object `operators`  
-Available object methods are as follows.  
-
-### `operators.add(a, b)`
-Adds the two values passed.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-
-### `operators.subtract(a, b)`
-Subtracts b from a.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-
-### `operators.multiply(a, b)`
-Multiplies the two values passed.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-
-### `operators.divide(a, b)`
-Divides a by b.
-
-#### Import
-`import operators from '../helpers/operators'`
-
-#### Arguments  
-a (number): number to use for calculation  
-b (number): number to use for calculation  
-
-#### Returns  
-(number): The resulting value.
-</br>
-</br>
-</br>
 ## parse-string.js  
 
 ### Exported function `parseString(s)`  
